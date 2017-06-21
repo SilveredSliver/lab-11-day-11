@@ -43,7 +43,7 @@ var imgFileList = [
   var b1 = document.getElementById('b1');
   function addClickEvent1() {
     totalNumClicked++;
-    imgList[curThree.theImages[0]].numClicked++;
+    imgList[currentThree.theImages[0]].numClicked++;
     if (totalNumClicked < 26) {
     displayImages()
   } else {
@@ -55,7 +55,7 @@ var imgFileList = [
 var b2 = document.getElementById('b2');
   function addClickEvent2() {
     totalNumClicked++;
-    imgList[curThree.theImages[1]].numClicked++;
+    imgList[currentThree.theImages[1]].numClicked++;
     if (totalNumClicked < 26) {
     displayImages()
   } else {
@@ -67,7 +67,7 @@ var b2 = document.getElementById('b2');
   var b3 = document.getElementById('b3');
   function addClickEvent3() {
     totalNumClicked++;
-    imgList[curThree.theImages[2]].numClicked++;
+    imgList[currentThree.theImages[2]].numClicked++;
     if (totalNumClicked < 26) {
     displayImages()
   } else {
@@ -106,27 +106,27 @@ var b2 = document.getElementById('b2');
 
   function displayImages()
   {
-    curThree = new selectThree(imgFileList, lastImages);
+    currentThree = new selectThree(imgFileList, lastImages);
 
     for (var k = 0; k < 3; k++) {
-      console.log(curThree.theImages[k]);
-      imgList[curThree.theImages[k]].numDisplayed++;
+      console.log(currentThree.theImages[k]);
+      imgList[currentThree.theImages[k]].numDisplayed++;
     };
     //Need to put these  images on the  website
     //Then need to wait for the user to click on an image
-    lastImages = curThree.theImages;
+    lastImages = currentThree.theImages;
 
     // var optionOneImage = imgFileList[myThree.theImages[0]];
-    var imgPath1 = ('img-directory/' + imgFileList[curThree.theImages[0]]);
+    var imgPath1 = ('img-directory/' + imgFileList[currentThree.theImages[0]]);
     document.getElementById('b1').src = imgPath1;
-    var imgPath2 = ('img-directory/' + imgFileList[curThree.theImages[1]]);
+    var imgPath2 = ('img-directory/' + imgFileList[currentThree.theImages[1]]);
     document.getElementById('b2').src = imgPath2;
-    var imgPath3 = ('img-directory/' + imgFileList[curThree.theImages[2]]);
+    var imgPath3 = ('img-directory/' + imgFileList[currentThree.theImages[2]]);
     document.getElementById('b3').src = imgPath3;
 
     console.log('num clicked ' + totalNumClicked);
 
   }
 
-var curThree = []
+var currentThree = []
 displayImages();
