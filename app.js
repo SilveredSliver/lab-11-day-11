@@ -4,7 +4,6 @@ var imgDirectory = 'img-directory';
 
 function getImage(name) {
   this.name = name;
-  // this.filePath = imgDirectory;
   this.numDisplayed = 0;
   this.numClicked = 0;
 }
